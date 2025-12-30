@@ -36,3 +36,12 @@ After the prefix, use the Issue ID followed by a short, kebab-case description o
 3. Just before submmiting, pull `master` to resolve potentials merges.
 3. In your PR description, use a keyword to link and close the issue (e.g., `Closes #12`).
 4. Once submitted, your PR will be reviewed as soon as possible!
+
+## Versioning & Releases
+
+We use [Semantic Versioning (SemVer)](https://semver.org/) for this project:
+- **Major** (x.0.0): Breaking changes.
+- **Minor** (0.x.0): New features (backwards compatible).
+- **Patch** (0.0.x): Bug fixes (backwards compatible).
+
+Tags and Releases are created by the maintainer. When a milestone is reached, a new version is tagged on the `master` branch.

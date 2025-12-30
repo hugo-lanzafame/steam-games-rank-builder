@@ -4,13 +4,14 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Zustand](https://img.shields.io/badge/State-Zustand-orange)](https://docs.pmnd.rs/zustand/)
 [![Steam API](https://img.shields.io/badge/Steam_API-v1-000000?logo=steam&logoColor=white)](https://steamcommunity.com/dev)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-lanzafame/steam-game-rank-builder)](https://github.com/hugo-lanzafame/steam-game-rank-builder/releases)
 
 A webapp that allows users to rank their Steam library into an interactive tierlist.
 
 ## Features
 
 - Steam Integration: Automatically fetch owned games using a Steam ID (supports Vanity URLs).
-- Drag & Drop Interface: Intuitive ranking system to move games between tiers (S, A, B, C, D) and the "Unranked" pool, powered by @dnd-kit for 60fps hardware-accelerated animations.
+- Drag & Drop Interface: Intuitive ranking system to move games between tiers (S, A, B, C, D) and the "Unranked" pool, powered by @dnd-kit for 60fps hardware-accelerated animations
 - State Persistence: Your Tier List is automatically saved in your browser's LocalStorage via Zustand, so you don't lose your progress.
 - Responsive Design: Fully functional on desktop with a clean, steam-inspired UI.
 
