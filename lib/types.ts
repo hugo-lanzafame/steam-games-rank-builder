@@ -1,18 +1,22 @@
-export interface GameItem {
+export interface Game {
   id: number;
   name: string;
   iconUrl: string;
   playtimeHours: number;
 }
 
-export interface RankConfig {
-  id: string;
+export interface Tier {
   name: string;
   color: string;
+  gamesId: number[];
 }
 
-export interface RankBlockHandlers {
-  onRename: (id: string, newName: string) => void;
-  onRemove: (id: string) => void;
-  onColorChange: (id: string, newColor: string) => void;
+export interface TierlistState {
+    steamId: string;
+    games: Game[];
+    tiers: Tier[];
+    unrankedGamesId: number[];
+    setTierlist: (steamId: string, games: Game[]) => void;
+    getGameById: (id: number) => Game | undefined;
+    moveGame: (draggableId: string, droppableId: string) => void;
 }

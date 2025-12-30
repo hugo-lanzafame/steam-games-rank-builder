@@ -1,11 +1,9 @@
-import { RankConfig } from './types';
+import { Tier } from "./types";
 
-export const POOL_ID = 'Pool';
-
-export const defaultTiers: RankConfig[] = [
-  { id: 'S', name: 'S', color: '#EF4444' }, // Red
-  { id: 'A', name: 'A', color: '#F97316' }, // Orange
-  { id: 'B', name: 'B', color: '#FACC15' }, // Yellow
-  { id: 'C', name: 'C', color: '#84CC16' }, // Lime Green
-  { id: 'D', name: 'D', color: '#3B82F6' }, // Blue
+export const DEFAULT_TIERLIST_TEMPLATE: Tier[] = [
+    { name: 'S', color: '#ff7f7f', gamesId: [] },
+    { name: 'A', color: '#ffbf7f', gamesId: [] },
+    { name: 'B', color: '#ffff7f', gamesId: [] },
+    { name: 'C', color: '#7fff7f', gamesId: [] },
+    { name: 'D', color: '#7fbfff', gamesId: [] },
 ];
