@@ -5,8 +5,11 @@
 [![Zustand](https://img.shields.io/badge/State-Zustand-orange)](https://docs.pmnd.rs/zustand/)
 [![Steam API](https://img.shields.io/badge/Steam_API-v1-000000?logo=steam&logoColor=white)](https://steamcommunity.com/dev)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/hugo-lanzafame/steam-game-rank-builder)](https://github.com/hugo-lanzafame/steam-game-rank-builder/releases)
+[![Vercel Deployment](https://img.shields.io/vercel/deploy/hugo-lanzafame/steam-games-rank-builder?logo=vercel)](https://steam-games-rank-builder.vercel.app)
 
 A webapp that allows users to rank their Steam library into an interactive tierlist.
+
+🔗 **[Try the Live Demo](https://steam-games-rank-builder.vercel.app)**
 
 ## Features
 
