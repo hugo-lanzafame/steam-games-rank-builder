@@ -1,7 +1,12 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Game, TierlistState } from '@/lib/types';
-import { DEFAULT_TIERLIST_TEMPLATE } from '@/lib/constants';
+import {
+    DEFAULT_TIERLIST_TEMPLATE,
+    DRAGGABLE_GAME_ID_PREFIX,
+    DROPPABLE_TIER_ID_PREFIX,
+    DROPPABLE_UNRANKED_ID 
+} from '@/lib/constants';
 
 export const useTierlistStore = create<TierlistState>()(
     persist(
@@ -25,8 +30,8 @@ export const useTierlistStore = create<TierlistState>()(
             },
 
             moveGame: (draggableId: string, droppableId: string) => set((state) => {
-                const gameId = Number(draggableId.toString().replace('game-', ''));
-                const tierName = droppableId.toString().replace('tier-', '');
+                const gameId = Number(draggableId.toString().replace(DRAGGABLE_GAME_ID_PREFIX, ''));
+                const tierName = droppableId.toString().replace(DROPPABLE_TIER_ID_PREFIX, '');
 
                 // Remove the game from its current location
                 const newUnranked = state.unrankedGamesId.filter(id => id !== gameId);
@@ -35,7 +40,7 @@ export const useTierlistStore = create<TierlistState>()(
                     gamesId: tier.gamesId.filter(id => id !== gameId)
                 }));
 
-                if (droppableId === 'unranked') {
+                if (droppableId === DROPPABLE_UNRANKED_ID) {
                     return {
                         unrankedGamesId: [...newUnranked, gameId],
                         tiers: newTiers

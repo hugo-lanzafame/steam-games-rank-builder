@@ -3,10 +3,11 @@
 import { useDroppable } from '@dnd-kit/core';
 import { Tier } from '@/lib/types'
 import GameIcon from './GameIcon';
+import { DROPPABLE_TIER_ID_PREFIX } from '@/lib/constants';
 
 export default function TierRow({ tier }: { tier: Tier }) {
     const { isOver, setNodeRef } = useDroppable({
-        id: `tier-${tier.name}`,
+        id: DROPPABLE_TIER_ID_PREFIX + tier.name,
     });
     const style = {
         color: isOver ? 'green' : undefined,
