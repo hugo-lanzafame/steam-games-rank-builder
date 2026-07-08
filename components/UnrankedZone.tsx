@@ -3,12 +3,13 @@
 import { useDroppable } from '@dnd-kit/core';
 import { useTierlistStore } from '@/stores/useTierlistStore';
 import GameIcon from './GameIcon';
+import { DROPPABLE_UNRANKED_ID } from '@/lib/constants';
 
 export default function UnrankedZone() {
     const unrankedGamesId = useTierlistStore((state) => state.unrankedGamesId);
 
     const { isOver, setNodeRef } = useDroppable({
-        id: `unranked`,
+        id: DROPPABLE_UNRANKED_ID,
     });
     const style = {
         color: isOver ? 'green' : undefined,
