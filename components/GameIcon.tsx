@@ -1,8 +1,9 @@
 'use client';
 
-import { useDraggable } from '@dnd-kit/core';
+import { useState } from 'react';
 import { useTierlistStore } from '@/stores/useTierlistStore';
 import { DRAGGABLE_GAME_ID_PREFIX } from '@/lib/constants';
+import Draggable from './Draggable';
 
 export default function GameIcon({ gameId }: { gameId: number }) {
     const getGameById = useTierlistStore((state) => state.getGameById);
@@ -12,16 +13,25 @@ export default function GameIcon({ gameId }: { gameId: number }) {
         return null;
     }
 
-    const { attributes, listeners, setNodeRef, transform } = useDraggable({
-        id: DRAGGABLE_GAME_ID_PREFIX + gameId,
-    });
-    const style = transform ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-    } : undefined;
+    const draggableId = DRAGGABLE_GAME_ID_PREFIX + game.id;
+    const [imgError, setImgError] = useState(false);
 
     return (
-        <div key={gameId} ref={setNodeRef} style={style} {...listeners} {...attributes} className='game-icon'>
-            <img src={game.iconUrl} alt={game.name} />
-        </div>
+        <Draggable draggableId={draggableId}>
+            <div className="game-icon">
+                {!imgError ? (
+                    <img
+                        src={game.iconUrl}
+                        alt={game.name}
+                        onError={() => setImgError(true)}
+                        loading="lazy"
+                    />
+                ) : (
+                    <div className='game-placeholder'>
+                        <span>{game.name}</span>
+                    </div>
+                )}
+            </div>
+        </Draggable>
     );
 }

@@ -33,6 +33,9 @@ a {
 
 .page {
   padding: 2rem;
+  max-width: 1850px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-header {
@@ -101,7 +104,7 @@ a {
 
 .tierlist .tierlist-row {
   display: flex;
-  min-height: 80px;
+  min-height: 170px;
 }
 
 .tierlist .box.tierlist-badge {
@@ -112,6 +115,11 @@ a {
   border-radius: 0;
   align-content: center;
   text-align: center;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 
 .tierlist .box.tierlist-games {
@@ -125,34 +133,54 @@ a {
   border-radius: 0;
 }
 
-.tierlist-row:first-child .tierlist-badge {
+.tierlist > :first-child .tierlist-badge {
   border-top-left-radius: 0.5rem;
 }
 
-.tierlist-row:first-child .tierlist-games {
+.tierlist > :first-child .tierlist-games {
   border-top-right-radius: 0.5rem;
 }
 
-.tierlist-row:last-child .tierlist-badge {
+.tierlist > :last-child .tierlist-badge {
   border-bottom-left-radius: 0.5rem;
 }
 
-.tierlist-row:last-child .tierlist-games {
+.tierlist > :last-child .tierlist-games {
   border-bottom-right-radius: 0.5rem;
 }
 
-.tierlist-row:not(:last-child) .box {
+.tierlist > :last-child:not(:last-child) .box {
   border-bottom: none;
 }
 
 .unranked-games {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
 .game-icon img {
-  width: 60px;
+  width: 100px;
+  height: 150px;
+  background-color: black;
+  border-radius: 0.25rem;
+  border: solid 1px var(--foreground-tertiary);
+}
+
+.game-icon .game-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 150px;
+  background-color: black;
+  color: var(--foreground);
+  border-radius: 0.25rem;
+  border: solid 1px var(--foreground-tertiary);
+  font-size: xx-small;
+  text-align: center;
+  padding: 0.25rem;
 }
 
 .footer {

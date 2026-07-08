@@ -44,4 +44,4 @@ We use [Semantic Versioning (SemVer)](https://semver.org/) for this project:
 - **Minor** (0.x.0): New features (backwards compatible).
 - **Patch** (0.0.x): Bug fixes (backwards compatible).
 
-Tags and Releases are created by the maintainer. When a milestone is reached, a new version is tagged on the `master` branch.
+Tags and Releases are created by the maintainer. A new version is tagged on the `master` branch as soon as a significant set of changes (features or bug fixes) is merged.

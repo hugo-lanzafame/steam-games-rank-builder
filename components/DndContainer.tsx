@@ -7,7 +7,6 @@ import UnrankedZone from './UnrankedZone';
 
 export default function DndContainer() {
     const tiers = useTierlistStore((state) => state.tiers);
-
     const moveGame = useTierlistStore((state) => state.moveGame);
 
     function handleDragEnd(event: DragEndEvent) {

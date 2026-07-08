@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
         const ownedGames = data.response.games || [];
 
         const gamesList: GameItem[] = ownedGames.map((game: any) => {
-            const iconUrl = `http://media.steampowered.com/steamcommunity/public/images/apps/${game.appid}/${game.img_icon_url}.jpg`;
+            const iconUrl = `https://cdn.akamai.steamstatic.com/steam/apps/${game.appid}/library_600x900.jpg`;
             const playtimeHours = Math.round(game.playtime_forever / 60);
 
             return {
